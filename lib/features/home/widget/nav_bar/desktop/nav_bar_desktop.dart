@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/common/widget/tab_desktop.dart';
 import 'package:portfolio/core/theme/app_color.dart';
 
 class NavBarDesktop extends StatelessWidget {
@@ -6,22 +7,20 @@ class NavBarDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 60,
-      width: double.infinity,
-      color: AppColors.navBarColor,
-      child: Center(
-        child: Row(
-          children: [
-            RichText(text: TextSpan(
-              children: [
-                const TextSpan(text: 'Enrollments for'),
-                TextSpan(text: 'Beginner to Anvanced Flutter Khmer Course')
-              ]
-            ))
-          ],
-        ),
-      ),
+    return const Row(
+      children: [
+        Spacer(flex: 3),
+        TabDesktop(title: "Home", route: "/"),
+        Spacer(),
+        TabDesktop(title: "Works", route: "/works"),
+        Spacer(),
+        TabDesktop(title: "Blog", route: "/blog"),
+        Spacer(),
+        TabDesktop(title: "About", route: "/about"),
+        Spacer(),
+        TabDesktop(title: "Contact", route: "/contact"),
+        Spacer(),
+      ],
     );
   }
 }
