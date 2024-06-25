@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/features/home/widget/nav_bar/mobile/nav_bar_mobile.dart';
+import 'package:portfolio/common/widget/nav_bar/mobile/nav_bar_mobile.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import 'desktop/nav_bar_desktop.dart';

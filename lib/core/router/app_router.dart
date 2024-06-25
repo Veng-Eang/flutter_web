@@ -1,19 +1,24 @@
 import 'package:go_router/go_router.dart';
+import 'package:portfolio/features/about_me/about_me_screen.dart';
 import '../../features/home/home_screen.dart';
+import 'route_uri.dart';
 
-class RouteUri {
-  RouteUri._();
-  static const String init = '/';
-  static const String login = '/login';
-  static const String register = '/register';
-  static const String home = '/home';
-}
 
-GoRouter appRouter() => GoRouter(initialLocation: '/', routes: [
+
+GoRouter appRouter() => GoRouter(
+  initialLocation: '/',
+  routes: [
       GoRoute(path: RouteUri.init, redirect: (context, state) => RouteUri.home),
       GoRoute(
         path: RouteUri.home,
-        pageBuilder: (context, state) =>
-            const NoTransitionPage(child: HomeScreen()),
-      )
+        pageBuilder: (context, state) => const NoTransitionPage(
+          child: HomeScreen(),
+        ),
+      ),
+      GoRoute(
+        path: RouteUri.aboutMe,
+        pageBuilder: (context, state) => const NoTransitionPage(
+          child: AboutMeScreen(),
+        ),
+      ),
     ]);
