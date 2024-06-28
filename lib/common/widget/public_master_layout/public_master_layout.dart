@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:portfolio/common/widget/drawer/drawer.dart';
 import 'package:portfolio/common/widget/nav_bar/nav_bar.dart';
 import 'package:portfolio/common/widget/side_bar/side_bar.dart';
 

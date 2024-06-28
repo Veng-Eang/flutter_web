@@ -11,22 +11,22 @@ final sideBarMenuData = [
   ),
   SideBarMenu(
     uri: RouteUri.works,
-    icon: Icons.home,
+    icon: Icons.work,
     title: (context) => "Works",
   ),
   SideBarMenu(
     uri: RouteUri.blog,
-    icon: Icons.home,
+    icon: Icons.code_rounded,
     title: (context) => "Blog",
   ),
   SideBarMenu(
     uri: RouteUri.aboutMe,
-    icon: Icons.home,
-    title: (context) => "About Me",
+    icon: Icons.contact_emergency,
+    title: (context) => "About",
   ),
   SideBarMenu(
     uri: RouteUri.contact,
-    icon: Icons.home,
-    title: (context) => "Contact Me",
+    icon: Icons.phone,
+    title: (context) => "Contact",
   ),
 ];

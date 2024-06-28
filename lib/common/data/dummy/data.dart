@@ -1,5 +1,5 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:portfolio/common/value/strings.dart';
+import 'package:portfolio/core/constants/strings.dart';
 import 'package:portfolio/common/widget/button/social_button.dart';
 
 class Data {

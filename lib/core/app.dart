@@ -16,7 +16,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     _appRouter = appRouter();
     return MaterialApp.router(
-      theme: AppTheme.darkTheme,
+      theme: AppTheme.darkTheme(),
       debugShowCheckedModeBanner: false,
       title: 'Veng-Eang | Developer & Content Creator',
       routerConfig: _appRouter,

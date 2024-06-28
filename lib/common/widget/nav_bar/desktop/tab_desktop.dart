@@ -7,10 +7,12 @@ class TabDesktop extends StatefulWidget {
     super.key,
     required this.title,
     required this.route,
+    required this.isSelectd,
   });
 
   final String title;
   final String route;
+  final bool isSelectd;
 
   @override
   State<TabDesktop> createState() => _TabDesktopState();
@@ -35,24 +37,38 @@ class _TabDesktopState extends State<TabDesktop> {
           });
         },
         child: AnimatedDefaultTextStyle(
-          style: _isSelected
+          style: widget.isSelectd && _isSelected
               ? const TextStyle(
                   decoration: TextDecoration.underline,
-                  backgroundColor: Colors.yellowAccent,
-                  color: Colors.black,
                   height: 1.2,
                   fontFamily: 'Preah',
                   fontSize: 20,
-                  fontWeight: FontWeight.bold)
-              : const TextStyle(
-                  color: Colors.white,
-                  height: 1.2,
-                  fontFamily: 'Preah',
-                  fontSize: 18,
                   fontWeight: FontWeight.bold,
-                ),
+                )
+              : _isSelected
+                  ? const TextStyle(
+                      decoration: TextDecoration.underline,
+                      color: Colors.orangeAccent,
+                      height: 1.2,
+                      fontFamily: 'Preah',
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold)
+                  : const TextStyle(
+                      color: Colors.white,
+                      height: 1.2,
+                      fontFamily: 'Preah',
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
           duration: const Duration(milliseconds: 150),
-          child: Text(widget.title),
+          child: widget.isSelectd
+              ? Text(
+                  widget.title,
+                  style: const TextStyle(
+                    color: Colors.orangeAccent,
+                  ),
+                )
+              : Text(widget.title),
         ),
       ),
     );

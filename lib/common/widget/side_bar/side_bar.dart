@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:portfolio/common/widget/side_bar/side_bar_header.dart';
+import 'package:portfolio/common/widget/side_bar/side_bar_header_public.dart';
+import 'package:portfolio/core/constants/dimens.dart';
+import 'package:portfolio/core/theme/app_color.dart';
+import 'package:portfolio/core/theme/extensions/app_side_bar_theme.dart';
 
 import '../../data/dummy/side_bar_menu_dummy_data.dart';
-
 
 class SideBar extends StatefulWidget {
   final bool autoSelectMenu;
@@ -33,28 +37,48 @@ class _SideBarState extends State<SideBar> {
 
   @override
   Widget build(BuildContext context) {
-    return Scrollbar(
-      controller: _scrollController,
-      child: ListView(
-        controller: _scrollController,
-        //TODO : add padding fromLTRB
-        children: [
-          //TODO : add side bar header
-          const Text("Side Bar Header"),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 8.0),
-            child: Divider(
-              height: 2.0,
-              thickness: 1.0,
-            ),
+    final themeData = Theme.of(context);
+    final sidebarTheme = themeData.extension<AppSideBarTheme>()!;
+    return Drawer(
+      child: Theme(
+        data: themeData.copyWith(
+          scrollbarTheme: themeData.scrollbarTheme.copyWith(
+            thumbColor: WidgetStatePropertyAll(
+                sidebarTheme.foregroundColor.withOpacity(0.2)),
           ),
-          _sideBarMenuList(context),
-        ],
+        ),
+        child: Scrollbar(
+          controller: _scrollController,
+          child: ListView(
+            controller: _scrollController,
+            padding: EdgeInsets.fromLTRB(
+              sidebarTheme.sidebarLeftPadding,
+              sidebarTheme.sidebarTopPadding,
+              sidebarTheme.sidebarRightPadding,
+              sidebarTheme.sidebarBottomPadding,
+            ),
+            children: [
+              SideBarHeader(
+                  onAccout: widget.onAccountButtonPressed,
+                  onLogout: widget.onLogoutButtonPressed),
+              // const SideBarHeaderPublic(),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 8.0),
+                child: Divider(
+                  height: 2.0,
+                  thickness: 1.0,
+                ),
+              ),
+              _sideBarMenuList(context),
+            ],
+          ),
+        ),
       ),
     );
   }
 
   Widget _sideBarMenuList(BuildContext context) {
+    final sidebarTheme = Theme.of(context).extension<AppSideBarTheme>()!;
     var currentLocation = widget.selectedMenuUri ?? '';
 
     if (currentLocation.isEmpty && widget.autoSelectMenu) {
@@ -69,6 +93,12 @@ class _SideBarState extends State<SideBar> {
       if (menu.children.isEmpty) {
         return _sideBarMenu(
           context: context,
+          padding: EdgeInsets.fromLTRB(
+            sidebarTheme.sidebarLeftPadding,
+            sidebarTheme.sidebarTopPadding,
+            sidebarTheme.sidebarRightPadding,
+            sidebarTheme.sidebarBottomPadding,
+          ),
           uri: menu.uri,
           icon: menu.icon,
           title: menu.title(context),
@@ -82,22 +112,46 @@ class _SideBarState extends State<SideBar> {
 
   Widget _sideBarMenu({
     required BuildContext context,
+    required EdgeInsets padding,
     required String uri,
     required IconData icon,
     required String title,
     required bool isSelected,
   }) {
+    final themeData = Theme.of(context);
+    final sidebarTheme = themeData.extension<AppSideBarTheme>()!;
+    final textColor = (isSelected
+        ? sidebarTheme.menuSelectedFontColor
+        : sidebarTheme.menuColor);
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: padding,
       child: Card(
+        color: sidebarTheme.menuCardColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(sidebarTheme.menuBorderRadius),
+        ),
+        elevation: 8.0,
+        margin: EdgeInsets.zero,
+        clipBehavior: Clip.antiAlias,
         child: ListTile(
-          title: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(icon),
-              const SizedBox(width: 5),
-              Text(title),
-            ],
+          title: Center(
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  icon,
+                  size: (sidebarTheme.menuFontSize + 4.0),
+                  color: textColor,
+                ),
+                const SizedBox(width: kDefaultPadding * 0.5),
+                Text(
+                  title,
+                  style: themeData.textTheme.titleLarge!.copyWith(
+                    color: textColor,
+                  ),
+                ),
+              ],
+            ),
           ),
           onTap: () => GoRouter.of(context).go(uri),
           selected: isSelected,
