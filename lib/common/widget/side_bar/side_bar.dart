@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:portfolio/common/widget/side_bar/side_bar_header.dart';
-import 'package:portfolio/common/widget/side_bar/side_bar_header_public.dart';
 import 'package:portfolio/core/constants/dimens.dart';
-import 'package:portfolio/core/theme/app_color.dart';
+import 'package:portfolio/core/theme/app_text.dart';
 import 'package:portfolio/core/theme/extensions/app_side_bar_theme.dart';
 
 import '../../data/dummy/side_bar_menu_dummy_data.dart';
@@ -146,7 +145,7 @@ class _SideBarState extends State<SideBar> {
                 const SizedBox(width: kDefaultPadding * 0.5),
                 Text(
                   title,
-                  style: themeData.textTheme.titleLarge!.copyWith(
+                  style: h8.copyWith(
                     color: textColor,
                   ),
                 ),

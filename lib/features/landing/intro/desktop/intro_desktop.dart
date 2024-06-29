@@ -11,9 +11,10 @@ class IntroDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
+    double h = MediaQuery.of(context).size.height;
     return Container(
       padding: EdgeInsets.symmetric(horizontal: w / 30),
-      height: MediaQuery.of(context).size.height,
+      height: h - 56,
       child: Stack(
         children: [
           const Align(
@@ -23,7 +24,7 @@ class IntroDesktop extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 100.0),
+              const SizedBox(height: 85.0),
               Row(
                 children: [
                   CircleAvatar(
@@ -45,8 +46,8 @@ class IntroDesktop extends StatelessWidget {
                             color: Colors.white,
                             fontSize: w / 40,
                           ),
-                          children: [
-                            const TextSpan(text: 'I am '),
+                          children: const [
+                            TextSpan(text: 'I am '),
                             TextSpan(
                               text: 'Veng-Eang',
                               style: TextStyle(color: AppColors.purple),
@@ -68,14 +69,14 @@ class IntroDesktop extends StatelessWidget {
                             fontSize: w / 20,
                             fontWeight: FontWeight.bold,
                           ),
-                          children: [
-                            const TextSpan(text: 'Crafting code to bring\n'),
-                            const TextSpan(text: 'ideas to '),
+                          children: const [
+                            TextSpan(text: 'Crafting code to bring\n'),
+                            TextSpan(text: 'ideas to '),
                             TextSpan(
                               text: 'life',
                               style: TextStyle(color: AppColors.purple),
                             ),
-                            const TextSpan(text: '...'),
+                            TextSpan(text: '...'),
                           ],
                         ),
                       ),
@@ -113,7 +114,8 @@ class IntroDesktop extends StatelessWidget {
                             color: Colors.black,
                           ),
                         ),
-                        TextSpan(text: ' who loves sharing his coding journey!'),
+                        TextSpan(
+                            text: ' who loves sharing his coding journey!'),
                       ],
                     ),
                   ),

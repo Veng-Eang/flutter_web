@@ -22,6 +22,7 @@ class AppDarkThemeColor {
   static const hyperlink = Color(0xFF0074CC);
   static const menu = Colors.white;
   static const menuCard = AppColors.purpleDark;
+  static const whiteText = Colors.white;
 }
 
 class AppLightThemeColor {

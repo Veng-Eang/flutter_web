@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/features/home/widget/intro/desktop/intro_desktop.dart';
-import 'package:portfolio/features/home/widget/intro/mobile/intro_mobile.dart';
+import 'package:portfolio/features/landing/intro/desktop/intro_desktop.dart';
+import 'package:portfolio/features/landing/intro/mobile/intro_mobile.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class Intro extends StatelessWidget {

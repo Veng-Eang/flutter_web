@@ -86,28 +86,42 @@ class AppTheme {
 
   static ThemeData darkTheme() {
     final ThemeData themeData = ThemeData(
-        appBarTheme: const AppBarTheme(
-          iconTheme: IconThemeData(color: Colors.white),
-          backgroundColor: AppDarkThemeColor.bgColor,
-        ),
-        scaffoldBackgroundColor: AppDarkThemeColor.bgColor,
-        primaryColor: AppDarkThemeColor.primary,
+      appBarTheme: const AppBarTheme(
+        iconTheme: IconThemeData(color: Colors.white),
+        backgroundColor: AppDarkThemeColor.bgColor,
+      ),
+      scaffoldBackgroundColor: AppDarkThemeColor.bgColor,
+      primaryColor: AppDarkThemeColor.primary,
+      // Card Theme ======================================================
+      cardTheme: CardTheme(
+        color: AppColors.purpleDark.withOpacity(0.5),
+      ),
 
-        // Draw Theme ======================================================
-        drawerTheme: DrawerThemeData(
-          backgroundColor: AppDarkThemeColor.bgColor,
-          scrimColor: AppDarkThemeColor.primary.withOpacity(0.6),
-          elevation: 10.0,
-          width: 280,
-          shadowColor: AppColors.purple,
-        ),
+      // Draw Theme ======================================================
+      drawerTheme: DrawerThemeData(
+        backgroundColor: AppDarkThemeColor.bgColor,
+        scrimColor: AppDarkThemeColor.primary.withOpacity(0.6),
+        elevation: 10.0,
+        width: 280,
+        shadowColor: AppColors.purple,
+      ),
 
-        // Text Theme ======================================================
-        textTheme: TextTheme(
-          titleLarge: h8.copyWith(
-            color: AppDarkThemeColor.accent,
-          ),
-        ));
+      // Text Theme ======================================================
+      textTheme: TextTheme(
+        titleLarge: h4.copyWith(
+          color: AppDarkThemeColor.whiteText,
+        ),
+        bodyLarge: h7.copyWith(
+          color: AppDarkThemeColor.whiteText,
+        ),
+        bodyMedium: h8.copyWith(
+          color: AppDarkThemeColor.whiteText,
+        ),
+        bodySmall: p.copyWith(
+          color: AppDarkThemeColor.whiteText,
+        ),
+      ),
+    );
     final appSidebarTheme = AppSideBarTheme(
       backgroundColor: AppDarkThemeColor.bgColor,
       foregroundColor: AppDarkThemeColor.primary,

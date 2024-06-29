@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/common/utils/adaptive.dart';
 import 'package:portfolio/common/widget/public_master_layout/public_master_layout.dart';
 import 'package:portfolio/features/home/widget/about/about.dart';
-import 'package:portfolio/features/home/widget/intro/intro.dart';
+import 'package:portfolio/features/landing/intro/intro.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
