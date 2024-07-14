@@ -1,0 +1,8 @@
+flutter_native_splash:
+  image: "assets/images/logo.png"
+  # image: assets/animations/loading.gif
+  color: "#18172B"
+  android: true
+  ios: true
+  web: true
+  

@@ -26,9 +26,10 @@ class WorkCard extends StatelessWidget {
       ),
       shadowColor: AppColors.purple,
       child: Padding(
-        padding: const EdgeInsets.all(15.0),
+        padding: EdgeInsets.all(width! / 13),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
               image,
@@ -36,7 +37,7 @@ class WorkCard extends StatelessWidget {
               height: height,
               fit: fit,
             ),
-            const SizedBox(height: 10),
+            SizedBox(height: width! / 20),
             Text(
               text ?? "",
               style: Theme.of(context).textTheme.bodyMedium,

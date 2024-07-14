@@ -15,6 +15,11 @@ final sideBarMenuData = [
     title: (context) => "Works",
   ),
   SideBarMenu(
+    uri: RouteUri.videos,
+    icon: Icons.play_circle_outlined,
+    title: (context) => "Videos",
+  ),
+  SideBarMenu(
     uri: RouteUri.blog,
     icon: Icons.code_rounded,
     title: (context) => "Blog",

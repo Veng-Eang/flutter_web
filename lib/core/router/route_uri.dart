@@ -6,6 +6,7 @@ class RouteUri {
   static const String home = '/home';
   static const String works = '/works';
   static const String blog = '/blog';
+  static const String videos = '/videos';
   static const String aboutMe = '/about-me';
   static const String contact = '/contact';
 }

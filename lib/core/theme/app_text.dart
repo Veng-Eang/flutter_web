@@ -10,4 +10,4 @@ const h5 = TextStyle(fontFamily: 'Preah', fontSize: 36.0, color: Colors.black);
 const h6 = TextStyle(fontFamily: 'Preah', fontSize: 30.0, color: Colors.black);
 const h7 = TextStyle(fontFamily: 'Preah', fontSize: 24.0, color: Colors.black);
 const h8 = TextStyle(fontFamily: 'Preah', fontSize: 18.0, color: Colors.black);
-const p = TextStyle(fontFamily: 'Preah', fontSize: 8.0, color: Colors.black);
+const p = TextStyle(fontFamily: 'Preah', fontSize: 13.0, color: Colors.black);

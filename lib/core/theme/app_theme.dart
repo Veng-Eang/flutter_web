@@ -88,7 +88,7 @@ class AppTheme {
     final ThemeData themeData = ThemeData(
       appBarTheme: const AppBarTheme(
         iconTheme: IconThemeData(color: Colors.white),
-        backgroundColor: AppDarkThemeColor.bgColor,
+        backgroundColor: AppDarkThemeColor.primary,
       ),
       scaffoldBackgroundColor: AppDarkThemeColor.bgColor,
       primaryColor: AppDarkThemeColor.primary,
@@ -96,7 +96,6 @@ class AppTheme {
       cardTheme: CardTheme(
         color: AppColors.purpleDark.withOpacity(0.5),
       ),
-
       // Draw Theme ======================================================
       drawerTheme: DrawerThemeData(
         backgroundColor: AppDarkThemeColor.bgColor,
@@ -106,6 +105,9 @@ class AppTheme {
         shadowColor: AppColors.purple,
       ),
 
+      // input decoration theme
+      
+      hintColor: Colors.black45,
       // Text Theme ======================================================
       textTheme: TextTheme(
         titleLarge: h4.copyWith(

@@ -1,4 +1,4 @@
-import 'package:portfolio/features/landing/video/domain/video.dart';
+import 'package:portfolio/features/landing/domain/video.dart';
 
 final videoData = [
   Video(

@@ -30,7 +30,7 @@ class SideBarHeader extends StatelessWidget {
             //TODO get fullname from server
             Text(
               "Veng-Eang",
-              style: themeData.textTheme.titleLarge!.copyWith(
+              style: themeData.textTheme.bodyLarge!.copyWith(
                 color: sidebarTheme.headerFontColor,
               ),
             ),
